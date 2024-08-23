@@ -13,5 +13,8 @@ eksctl version
 #cluster creation :
 eksctl create cluster --name go-web-app --region us-east-1 --nodegroup-name go-web-app-nodes --node-type t2.medium --nodes 2  --managed
 
+#cluster deletion :
+eksctl delete cluster --name go-web-app --region us-east-1
+
 #nginx ingress installation:
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.2/deploy/static/provider/aws/deploy.yaml
