@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: go-web-app
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: go-web-app
   ports:
     - port: 80
       targetPort: 8080
-      protocol: tcp
+      protocol: TCP
