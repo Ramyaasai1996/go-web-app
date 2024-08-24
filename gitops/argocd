@@ -1,0 +1,19 @@
+
+#Install Argo CD using manifests
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+#Access the Argo CD UI (Loadbalancer service)
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+
+#Get the Loadbalancer service IP
+kubectl get svc argocd-server -n argocd
+
+#to login to argocd username: admin , password: take from OS as mentioned below
+
+[root@ip-172-31-55-238 go-web-app-chart]# kubectl edit secret argocd-initial-admin-secret -n argocd
+Edit cancelled, no changes made.
+[root@ip-172-31-55-238 go-web-app-chart]# echo "SGhUdE9QS0VHNDl0SzJmRA==" | base64 --decode
+HhTtOPKEG49tK2fD[root@ip-172-31-55-238 go-web-app-chart]# ls
+
+
