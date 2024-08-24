@@ -3,7 +3,11 @@ kind: Service
 metadata:
   name: go-web-app
 spec:
-  type: NodePort
+<<<<<<< HEAD
+  type: ClusterIP
+=======
+  type: ClusterIP
+>>>>>>> c81e2d519df910bedf09d006d1ac1cb540ffdaab
   selector:
     app: go-web-app
   ports:
